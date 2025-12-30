@@ -1,655 +1,421 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Placement Document Renamer</title>
-    <link rel="stylesheet" href="./style.css" />
-  </head>
 
-  <body
-    class="bg-gray-50 text-gray-800 min-h-screen font-sans selection:bg-blue-200 selection:text-blue-900"
-  >
-    <div class="max-w-5xl mx-auto py-10 px-4 sm:px-6 lg:px-8">
-      <!-- Header -->
-      <header class="text-center mb-10">
-        <h1
-          class="text-4xl font-extrabold text-blue-900 tracking-tight sm:text-5xl mb-2"
-        >
-          Placement Registration Documentation
-        </h1>
-        <p class="text-lg text-gray-600">Placement Documents Renaming Tool</p>
-        <p class="text-lg text-gray-600">
-          Privacy: All processing is performed entirely on the client side using
-          JavaScript. No data, in any form, is transmitted to or stored on any
-          server. This website is fully frontend-based, ensuring complete user
-          data privacy.
-        </p>
-      </header>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Placement Document Renamer</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
 
-      <!-- Steps Section -->
-      <div
-        class="bg-blue-50 border-l-4 border-blue-500 p-4 mb-8 rounded-r-lg shadow-sm"
-      >
-        <div class="flex items-start">
-          <div class="flex-shrink-0">
-            <svg
-              class="h-6 w-6 text-blue-500"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-              />
-            </svg>
-          </div>
-          <div class="ml-3">
-            <h3 class="text-lg font-medium text-blue-900">How it Works</h3>
-            <div class="mt-2 text-blue-800 text-base space-y-2">
-              <p>
-                <strong>Step explanation:</strong> Upload All document and click
-                Rename & Download Zip.
-              </p>
-              <p>
-                You just upload eg. <strong>MyAadhar.pdf</strong>, and you get
-                <code
-                  class="bg-blue-100 px-1 py-0.5 rounded text-blue-900 font-mono text-sm"
-                  >AadhaarCard_0801XX241000_StudentFullName_CourseCode_BranchCode</code
-                >
-              </p>
-            </div>
+<body class="bg-gray-50 text-gray-800 min-h-screen font-sans selection:bg-blue-200 selection:text-blue-900">
+  <div class="max-w-5xl mx-auto py-10 px-4 sm:px-6 lg:px-8">
+    <!-- Header -->
+    <header class="text-center mb-10">
+      <h1 class="text-4xl font-extrabold text-blue-900 tracking-tight sm:text-5xl mb-2">
+        Placement Registration Documentation
+      </h1>
+      <p class="text-lg text-gray-600">Placement Documents Renaming Tool</p>
+      <p class="text-lg text-gray-600">
+        Privacy: All processing is performed entirely on the client side using
+        JavaScript. No data, in any form, is transmitted to or stored on any
+        server. This website is fully frontend-based, ensuring complete user
+        data privacy.
+      </p>
+    </header>
+
+    <!-- Steps Section -->
+    <div class="bg-blue-50 border-l-4 border-blue-500 p-4 mb-8 rounded-r-lg shadow-sm">
+      <div class="flex items-start">
+        <div class="flex-shrink-0">
+          <svg class="h-6 w-6 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+        </div>
+        <div class="ml-3">
+          <h3 class="text-lg font-medium text-blue-900">How it Works</h3>
+          <div class="mt-2 text-blue-800 text-base space-y-2">
+            <p>
+              <strong>Step explanation:</strong> Upload All document and click
+              Rename & Download Zip.
+            </p>
+            <p>
+              You just upload eg. <strong>MyAadhar.pdf</strong>, and you get
+              <code
+                class="bg-blue-100 px-1 py-0.5 rounded text-blue-900 font-mono text-sm">AadhaarCard_0801XX241000_StudentFullName_CourseCode_BranchCode</code>
+            </p>
           </div>
         </div>
       </div>
-
-      <div class="card space-y-8">
-        <!-- Student Details Section -->
-        <section>
-          <h2
-            class="text-xl font-semibold text-gray-800 border-b pb-2 mb-4 flex items-center"
-          >
-            <svg
-              class="w-5 h-5 mr-2 text-blue-600"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
-              ></path>
-            </svg>
-            Student Details (Mandatory)
-          </h2>
-          <div class="grid grid-cols-1 gap-y-6 gap-x-4 sm:grid-cols-2">
-            <div>
-              <label for="studentName" class="form-label">Student Name</label>
-              <input
-                type="text"
-                id="studentName"
-                class="form-input"
-                placeholder="e.g. John Doe (Becomes John_Doe)"
-              />
-            </div>
-
-            <div>
-              <label for="rollNumber" class="form-label">Roll Number</label>
-              <input
-                type="text"
-                id="rollNumber"
-                class="form-input"
-                placeholder="e.g. 0801XX241000"
-              />
-            </div>
-
-            <div>
-              <label for="courseCode" class="form-label">Course Code</label>
-              <select id="courseCode" class="form-input">
-                <option value="">Select Course</option>
-                <option value="BT">BT</option>
-                <option value="MT">MT</option>
-                <option value="BE">BE</option>
-                <option value="ME">ME</option>
-                <option value="MBA">MBA</option>
-                <option value="MCA">MCA</option>
-                <option value="BP">BP</option>
-                <option value="MP">MP</option>
-                <option value="MSC">MSC</option>
-              </select>
-            </div>
-
-            <div>
-              <label for="branchCode" class="form-label">Branch Code</label>
-              <select id="branchCode" class="form-input">
-                <option value="">Select Branch</option>
-                <!-- Engineering -->
-                <option value="BM">BM</option>
-                <option value="BM_BSPI">BM_BSPI</option>
-                <option value="CE">CE</option>
-                <option value="CE_EN">CE_EN</option>
-                <option value="CE_SE">CE_SE</option>
-                <option value="CE_TE">CE_TE</option>
-                <option value="CE_WREN">CE_WREN</option>
-                <option value="CS">CS</option>
-                <option value="EC">EC</option>
-                <option value="EE">EE</option>
-                <option value="EE_DTI">EE_DTI</option>
-                <option value="EE_PE">EE_PE</option>
-                <option value="EE_PSC">EE_PSC</option>
-                <option value="EI">EI</option>
-                <option value="EI_MVD">EI_MVD</option>
-                <option value="ET">ET</option>
-                <option value="IP">IP</option>
-                <option value="IP_CIM">IP_CIM</option>
-                <option value="IP_IEM">IP_IEM</option>
-                <option value="IP_MFE">IP_MFE</option>
-                <option value="IT">IT</option>
-                <option value="ME">ME</option>
-                <option value="ME_CCC">ME_CCC</option>
-                <option value="ME_MED">ME_MED</option>
-                <option value="ME_TE">ME_TE</option>
-                <option value="ME_TM">ME_TM</option>
-                <option value="PH_OC">PH_OC</option>
-                <option value="PY">PY</option>
-                <!-- Pharmacy -->
-                <option value="IPH">IPH</option>
-                <option value="PHC">PHC</option>
-                <!-- M.Sc -->
-                <option value="AC">AC</option>
-                <option value="AM">AM</option>
-                <option value="AP">AP</option>
-                <!-- MBA -->
-                <option value="FI">FI</option>
-                <option value="HA">HA</option>
-                <option value="HR">HR</option>
-                <option value="MK">MK</option>
-                <option value="OP">OP</option>
-              </select>
-            </div>
-          </div>
-        </section>
-
-        <!-- Common Documents -->
-        <section>
-          <h2
-            class="text-xl font-semibold text-gray-800 border-b pb-2 mb-4 flex items-center"
-          >
-            <svg
-              class="w-5 h-5 mr-2 text-green-600"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-              ></path>
-            </svg>
-            Common Documents (All Students)
-          </h2>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div class="space-y-4">
-              <div>
-                <label class="form-label">Passport Size Photograph</label>
-                <input
-                  type="file"
-                  id="file-Photograph"
-                  accept=".pdf"
-                  class="file-input-base file:bg-green-100 file:text-green-700 hover:file:bg-green-200"
-                />
-              </div>
-              <div>
-                <label class="form-label">10th Class Marksheet</label>
-                <input
-                  type="file"
-                  id="file-10th"
-                  accept=".pdf"
-                  class="file-input-base file:bg-green-100 file:text-green-700 hover:file:bg-green-200"
-                />
-              </div>
-              <div>
-                <label class="form-label">12th Class Marksheet</label>
-                <input
-                  type="file"
-                  id="file-12th"
-                  accept=".pdf"
-                  class="file-input-base file:bg-green-100 file:text-green-700 hover:file:bg-green-200"
-                />
-              </div>
-              <div>
-                <label class="form-label">Placement Registration Form</label>
-                <input
-                  type="file"
-                  id="file-PRDForm"
-                  accept=".pdf"
-                  class="file-input-base file:bg-green-100 file:text-green-700 hover:file:bg-green-200"
-                />
-              </div>
-            </div>
-            <div class="space-y-4">
-              <div>
-                <label class="form-label">Aadhaar Card</label>
-                <input
-                  type="file"
-                  id="file-AadhaarCard"
-                  accept=".pdf"
-                  class="file-input-base file:bg-blue-100 file:text-blue-700 hover:file:bg-blue-200"
-                />
-              </div>
-              <div>
-                <label class="form-label">PAN Card</label>
-                <input
-                  type="file"
-                  id="file-PANCard"
-                  accept=".pdf"
-                  class="file-input-base file:bg-blue-100 file:text-blue-700 hover:file:bg-blue-200"
-                />
-              </div>
-              <div>
-                <label class="form-label">APAAR ID</label>
-                <input
-                  type="file"
-                  id="file-APAAR_ID"
-                  accept=".pdf"
-                  class="file-input-base file:bg-blue-100 file:text-blue-700 hover:file:bg-blue-200"
-                />
-              </div>
-              <div>
-                <label class="form-label">CV (1 Page)</label>
-                <input
-                  type="file"
-                  id="file-CV01PageFormat"
-                  accept=".pdf"
-                  class="file-input-base file:bg-purple-100 file:text-purple-700 hover:file:bg-purple-200"
-                />
-              </div>
-              <div>
-                <label class="form-label">CV (2 Pages)</label>
-                <input
-                  type="file"
-                  id="file-CV02PagesFormat"
-                  accept=".pdf"
-                  class="file-input-base file:bg-purple-100 file:text-purple-700 hover:file:bg-purple-200"
-                />
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <!-- Specific Documents -->
-        <section class="space-y-6">
-          <h2
-            class="text-xl font-semibold text-gray-800 border-b pb-2 flex items-center"
-          >
-            <svg
-              class="w-5 h-5 mr-2 text-indigo-600"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"
-              ></path>
-            </svg>
-            Program Specific / Optional Documents
-          </h2>
-
-          <!-- Bachelor Specific -->
-          <details class="group bg-gray-50 rounded-lg border border-gray-200">
-            <summary
-              class="flex justify-between items-center font-medium cursor-pointer list-none p-4"
-            >
-              <span> Bachelor Students (JEE, 12th Imp)</span>
-              <span class="transition group-open:rotate-180">
-                <svg
-                  fill="none"
-                  height="24"
-                  shape-rendering="geometricPrecision"
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="1.5"
-                  viewBox="0 0 24 24"
-                  width="24"
-                >
-                  <path d="M6 9l6 6 6-6"></path>
-                </svg>
-              </span>
-            </summary>
-            <div
-              class="text-gray-600 border-t border-gray-200 p-4 grid grid-cols-1 md:grid-cols-2 gap-4"
-            >
-              <div>
-                <label class="form-label">JEE (Mains) Score Card</label>
-                <input
-                  type="file"
-                  id="file-JEEScoreCard"
-                  accept=".pdf"
-                  class="file-input-base file:bg-indigo-100 file:text-indigo-700 hover:file:bg-indigo-200"
-                />
-              </div>
-              <div>
-                <label class="form-label">12th Improvement Marksheet</label>
-                <input
-                  type="file"
-                  id="file-12thImprovement"
-                  accept=".pdf"
-                  class="file-input-base file:bg-indigo-100 file:text-indigo-700 hover:file:bg-indigo-200"
-                />
-              </div>
-            </div>
-          </details>
-
-          <!-- Diploma -->
-          <details class="group bg-gray-50 rounded-lg border border-gray-200">
-            <summary
-              class="flex justify-between items-center font-medium cursor-pointer list-none p-4"
-            >
-              <span> Diploma Students </span>
-              <span class="transition group-open:rotate-180">
-                <svg
-                  fill="none"
-                  height="24"
-                  shape-rendering="geometricPrecision"
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="1.5"
-                  viewBox="0 0 24 24"
-                  width="24"
-                >
-                  <path d="M6 9l6 6 6-6"></path>
-                </svg>
-              </span>
-            </summary>
-            <div class="text-gray-600 border-t border-gray-200 p-4">
-              <!-- Toggle -->
-              <div class="flex gap-4 mb-4">
-                <label class="inline-flex items-center">
-                  <input
-                    type="radio"
-                    name="diplomaSystem"
-                    value="semester"
-                    checked
-                    class="form-radio text-indigo-600"
-                    onchange="updateLabels('diploma')"
-                  />
-                  <span class="ml-2">Semester System</span>
-                </label>
-                <label class="inline-flex items-center">
-                  <input
-                    type="radio"
-                    name="diplomaSystem"
-                    value="yearly"
-                    class="form-radio text-indigo-600"
-                    onchange="updateLabels('diploma')"
-                  />
-                  <span class="ml-2">Yearly System</span>
-                </label>
-              </div>
-
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div>
-                  <label id="label-DiplomaPreFinal" class="form-label"
-                    >Semesters 1-5 (Single PDF)</label
-                  >
-                  <input
-                    type="file"
-                    id="file-DiplomaPreFinal"
-                    accept=".pdf"
-                    class="file-input-base"
-                  />
-                </div>
-                <div>
-                  <label id="label-DiplomaFinal" class="form-label"
-                    >Semester 6</label
-                  >
-                  <input
-                    type="file"
-                    id="file-DiplomaFinal"
-                    accept=".pdf"
-                    class="file-input-base"
-                  />
-                </div>
-              </div>
-            </div>
-          </details>
-
-          <!-- Graduation -->
-          <details class="group bg-gray-50 rounded-lg border border-gray-200">
-            <summary
-              class="flex justify-between items-center font-medium cursor-pointer list-none p-4"
-            >
-              <span> Masters - Graduation Marksheets </span>
-              <span class="transition group-open:rotate-180">
-                <svg
-                  fill="none"
-                  height="24"
-                  shape-rendering="geometricPrecision"
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="1.5"
-                  viewBox="0 0 24 24"
-                  width="24"
-                >
-                  <path d="M6 9l6 6 6-6"></path>
-                </svg>
-              </span>
-            </summary>
-            <div class="text-gray-600 border-t border-gray-200 p-4">
-              <!-- Toggle -->
-              <div class="flex gap-4 mb-4">
-                <label class="inline-flex items-center">
-                  <input
-                    type="radio"
-                    name="graduationSystem"
-                    value="semester"
-                    checked
-                    class="form-radio text-indigo-600"
-                    onchange="updateLabels('graduation')"
-                  />
-                  <span class="ml-2">Semester System</span>
-                </label>
-                <label class="inline-flex items-center">
-                  <input
-                    type="radio"
-                    name="graduationSystem"
-                    value="yearly"
-                    class="form-radio text-indigo-600"
-                    onchange="updateLabels('graduation')"
-                  />
-                  <span class="ml-2">Yearly System</span>
-                </label>
-              </div>
-
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div>
-                  <label id="label-GraduationPreFinal" class="form-label"
-                    >Semesters 1-7 (Single PDF)</label
-                  >
-                  <input
-                    type="file"
-                    id="file-GraduationPreFinal"
-                    accept=".pdf"
-                    class="file-input-base"
-                  />
-                </div>
-                <div>
-                  <label id="label-GraduationFinal" class="form-label"
-                    >Semester 8</label
-                  >
-                  <input
-                    type="file"
-                    id="file-GraduationFinal"
-                    accept=".pdf"
-                    class="file-input-base"
-                  />
-                </div>
-              </div>
-            </div>
-          </details>
-
-          <!-- Post-Graduation -->
-          <details class="group bg-gray-50 rounded-lg border border-gray-200">
-            <summary
-              class="flex justify-between items-center font-medium cursor-pointer list-none p-4"
-            >
-              <span> Masters - Post-Graduation Marksheets & Scores</span>
-              <span class="transition group-open:rotate-180">
-                <svg
-                  fill="none"
-                  height="24"
-                  shape-rendering="geometricPrecision"
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="1.5"
-                  viewBox="0 0 24 24"
-                  width="24"
-                >
-                  <path d="M6 9l6 6 6-6"></path>
-                </svg>
-              </span>
-            </summary>
-            <div class="text-gray-600 border-t border-gray-200 p-4">
-              <!-- Toggle -->
-              <div class="flex gap-4 mb-4">
-                <label class="inline-flex items-center">
-                  <input
-                    type="radio"
-                    name="pgSystem"
-                    value="semester"
-                    checked
-                    class="form-radio text-indigo-600"
-                    onchange="updateLabels('pg')"
-                  />
-                  <span class="ml-2">Semester System</span>
-                </label>
-                <label class="inline-flex items-center">
-                  <input
-                    type="radio"
-                    name="pgSystem"
-                    value="yearly"
-                    class="form-radio text-indigo-600"
-                    onchange="updateLabels('pg')"
-                  />
-                  <span class="ml-2">Yearly System</span>
-                </label>
-              </div>
-
-              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                <div>
-                  <label id="label-PGPreFinal" class="form-label"
-                    >Semesters 1-3 (Single PDF)</label
-                  >
-                  <input
-                    type="file"
-                    id="file-PGPreFinal"
-                    accept=".pdf"
-                    class="file-input-base"
-                  />
-                </div>
-                <div>
-                  <label id="label-PGFinal" class="form-label"
-                    >Semester 4</label
-                  >
-                  <input
-                    type="file"
-                    id="file-PGFinal"
-                    accept=".pdf"
-                    class="file-input-base"
-                  />
-                </div>
-                <div class="col-span-1 md:col-span-1">
-                  <label class="form-label">GATE/GPAT/MET Score Card</label
-                  ><input
-                    type="file"
-                    id="file-GATEScoreCard"
-                    accept=".pdf"
-                    class="file-input-base"
-                  />
-                </div>
-              </div>
-            </div>
-          </details>
-        </section>
-
-        <!-- Actions -->
-        <div
-          class="flex flex-col sm:flex-row gap-4 pt-4 border-t sticky bottom-0 bg-white p-4 shadow-[0_-5px_15px_rgba(0,0,0,0.05)] z-10"
-        >
-          <button
-            id="downloadZipBtn"
-            class="btn-primary w-full flex justify-center items-center gap-2 text-lg"
-          >
-            <svg
-              class="w-6 h-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
-              ></path>
-            </svg>
-            Rename & Download ZIP
-          </button>
-        </div>
-
-        <div id="statusMessage" class="hidden p-4 rounded-md mt-4"></div>
-      </div>
-
-      <footer
-        class="mt-10 text-center text-sm text-gray-500 flex flex-col items-center gap-2 pb-8"
-      >
-        <p>&copy; 2025 All rights reserved.</p>
-        <div class="flex gap-4 items-center">
-          <a
-            href="https://www.linkedin.com/in/shivansh-mishra-59281620b/"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="flex items-center gap-1 text-blue-600 hover:text-blue-800 font-medium transition"
-          >
-            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-              <path
-                d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
-              />
-            </svg>
-            Shivansh Mishra
-          </a>
-          <span class="text-gray-300">|</span>
-          <a
-            href="https://github.com/shivanshmishra123"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="flex items-center gap-1 text-gray-700 hover:text-black font-medium transition"
-          >
-            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-              <path
-                d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
-              />
-            </svg>
-            GitHub
-          </a>
-        </div>
-      </footer>
     </div>
 
-    <script type="module" src="./main.js"></script>
-  </body>
+    <div class="card space-y-8">
+      <!-- Student Details Section -->
+      <section>
+        <h2 class="text-xl font-semibold text-gray-800 border-b pb-2 mb-4 flex items-center">
+          <svg class="w-5 h-5 mr-2 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+          </svg>
+          Student Details (Mandatory)
+        </h2>
+        <div class="grid grid-cols-1 gap-y-6 gap-x-4 sm:grid-cols-2">
+          <div>
+            <label for="studentName" class="form-label">Student Name</label>
+            <input type="text" id="studentName" class="form-input" placeholder="e.g. John Doe (Becomes John_Doe)" />
+          </div>
+
+          <div>
+            <label for="rollNumber" class="form-label">Roll Number</label>
+            <input type="text" id="rollNumber" class="form-input" placeholder="e.g. 0801XX241000" />
+          </div>
+
+          <div>
+            <label for="courseCode" class="form-label">Course Code</label>
+            <select id="courseCode" class="form-input">
+              <option value="">Select Course</option>
+              <option value="BT">BT</option>
+              <option value="MT">MT</option>
+              <option value="BE">BE</option>
+              <option value="ME">ME</option>
+              <option value="MBA">MBA</option>
+              <option value="MCA">MCA</option>
+              <option value="BP">BP</option>
+              <option value="MP">MP</option>
+              <option value="MSC">MSC</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="branchCode" class="form-label">Branch Code</label>
+            <select id="branchCode" class="form-input">
+              <option value="">Select Branch</option>
+              <!-- Engineering -->
+              <option value="BM">BM</option>
+              <option value="BM_BSPI">BM_BSPI</option>
+              <option value="CE">CE</option>
+              <option value="CE_EN">CE_EN</option>
+              <option value="CE_SE">CE_SE</option>
+              <option value="CE_TE">CE_TE</option>
+              <option value="CE_WREN">CE_WREN</option>
+              <option value="CS">CS</option>
+              <option value="EC">EC</option>
+              <option value="EE">EE</option>
+              <option value="EE_DTI">EE_DTI</option>
+              <option value="EE_PE">EE_PE</option>
+              <option value="EE_PSC">EE_PSC</option>
+              <option value="EI">EI</option>
+              <option value="EI_MVD">EI_MVD</option>
+              <option value="ET">ET</option>
+              <option value="IP">IP</option>
+              <option value="IP_CIM">IP_CIM</option>
+              <option value="IP_IEM">IP_IEM</option>
+              <option value="IP_MFE">IP_MFE</option>
+              <option value="IT">IT</option>
+              <option value="ME">ME</option>
+              <option value="ME_CCC">ME_CCC</option>
+              <option value="ME_MED">ME_MED</option>
+              <option value="ME_TE">ME_TE</option>
+              <option value="ME_TM">ME_TM</option>
+              <option value="PH_OC">PH_OC</option>
+              <option value="PY">PY</option>
+              <!-- Pharmacy -->
+              <option value="IPH">IPH</option>
+              <option value="PHC">PHC</option>
+              <!-- M.Sc -->
+              <option value="AC">AC</option>
+              <option value="AM">AM</option>
+              <option value="AP">AP</option>
+              <!-- MBA -->
+              <option value="FI">FI</option>
+              <option value="HA">HA</option>
+              <option value="HR">HR</option>
+              <option value="MK">MK</option>
+              <option value="OP">OP</option>
+            </select>
+          </div>
+        </div>
+      </section>
+
+      <!-- Common Documents -->
+      <section>
+        <h2 class="text-xl font-semibold text-gray-800 border-b pb-2 mb-4 flex items-center">
+          <svg class="w-5 h-5 mr-2 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
+            </path>
+          </svg>
+          Common Documents (All Students)
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="space-y-4">
+            <div>
+              <label class="form-label">Passport Size Photograph</label>
+              <input type="file" id="file-Photograph" accept=".pdf"
+                class="file-input-base file:bg-green-100 file:text-green-700 hover:file:bg-green-200" />
+            </div>
+            <div>
+              <label class="form-label">10th Class Marksheet</label>
+              <input type="file" id="file-10th" accept=".pdf"
+                class="file-input-base file:bg-green-100 file:text-green-700 hover:file:bg-green-200" />
+            </div>
+            <div>
+              <label class="form-label">12th Class Marksheet</label>
+              <input type="file" id="file-12th" accept=".pdf"
+                class="file-input-base file:bg-green-100 file:text-green-700 hover:file:bg-green-200" />
+            </div>
+            <div>
+              <label class="form-label">Placement Registration Form</label>
+              <input type="file" id="file-PRDForm" accept=".pdf"
+                class="file-input-base file:bg-green-100 file:text-green-700 hover:file:bg-green-200" />
+            </div>
+          </div>
+          <div class="space-y-4">
+            <div>
+              <label class="form-label">Aadhaar Card</label>
+              <input type="file" id="file-AadhaarCard" accept=".pdf"
+                class="file-input-base file:bg-blue-100 file:text-blue-700 hover:file:bg-blue-200" />
+            </div>
+            <div>
+              <label class="form-label">PAN Card</label>
+              <input type="file" id="file-PANCard" accept=".pdf"
+                class="file-input-base file:bg-blue-100 file:text-blue-700 hover:file:bg-blue-200" />
+            </div>
+            <div>
+              <label class="form-label">APAAR ID</label>
+              <input type="file" id="file-APAAR_ID" accept=".pdf"
+                class="file-input-base file:bg-blue-100 file:text-blue-700 hover:file:bg-blue-200" />
+            </div>
+            <div>
+              <label class="form-label">CV (1 Page)</label>
+              <input type="file" id="file-CV01PageFormat" accept=".pdf"
+                class="file-input-base file:bg-purple-100 file:text-purple-700 hover:file:bg-purple-200" />
+            </div>
+            <div>
+              <label class="form-label">CV (2 Pages)</label>
+              <input type="file" id="file-CV02PagesFormat" accept=".pdf"
+                class="file-input-base file:bg-purple-100 file:text-purple-700 hover:file:bg-purple-200" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Specific Documents -->
+      <section class="space-y-6">
+        <h2 class="text-xl font-semibold text-gray-800 border-b pb-2 flex items-center">
+          <svg class="w-5 h-5 mr-2 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10">
+            </path>
+          </svg>
+          Program Specific / Optional Documents
+        </h2>
+
+        <!-- Bachelor Specific -->
+        <details class="group bg-gray-50 rounded-lg border border-gray-200">
+          <summary class="flex justify-between items-center font-medium cursor-pointer list-none p-4">
+            <span> Bachelor Students (JEE, 12th Imp)</span>
+            <span class="transition group-open:rotate-180">
+              <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor"
+                stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24">
+                <path d="M6 9l6 6 6-6"></path>
+              </svg>
+            </span>
+          </summary>
+          <div class="text-gray-600 border-t border-gray-200 p-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label class="form-label">JEE (Mains) Score Card</label>
+              <input type="file" id="file-JEEScoreCard" accept=".pdf"
+                class="file-input-base file:bg-indigo-100 file:text-indigo-700 hover:file:bg-indigo-200" />
+            </div>
+            <div>
+              <label class="form-label">12th Improvement Marksheet</label>
+              <input type="file" id="file-12thImprovement" accept=".pdf"
+                class="file-input-base file:bg-indigo-100 file:text-indigo-700 hover:file:bg-indigo-200" />
+            </div>
+          </div>
+        </details>
+
+        <!-- Diploma -->
+        <details class="group bg-gray-50 rounded-lg border border-gray-200">
+          <summary class="flex justify-between items-center font-medium cursor-pointer list-none p-4">
+            <span> Diploma Students </span>
+            <span class="transition group-open:rotate-180">
+              <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor"
+                stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24">
+                <path d="M6 9l6 6 6-6"></path>
+              </svg>
+            </span>
+          </summary>
+          <div class="text-gray-600 border-t border-gray-200 p-4">
+            <!-- Toggle -->
+            <div class="flex gap-4 mb-4">
+              <label class="inline-flex items-center">
+                <input type="radio" name="diplomaSystem" value="semester" checked class="form-radio text-indigo-600"
+                  onchange="updateLabels('diploma')" />
+                <span class="ml-2">Semester System</span>
+              </label>
+              <label class="inline-flex items-center">
+                <input type="radio" name="diplomaSystem" value="yearly" class="form-radio text-indigo-600"
+                  onchange="updateLabels('diploma')" />
+                <span class="ml-2">Yearly System</span>
+              </label>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <label id="label-DiplomaPreFinal" class="form-label">Semesters 1-5 (Single PDF)</label>
+                <input type="file" id="file-DiplomaPreFinal" accept=".pdf" class="file-input-base" />
+              </div>
+              <div>
+                <label id="label-DiplomaFinal" class="form-label">Semester 6</label>
+                <input type="file" id="file-DiplomaFinal" accept=".pdf" class="file-input-base" />
+              </div>
+            </div>
+          </div>
+        </details>
+
+        <!-- Graduation -->
+        <details class="group bg-gray-50 rounded-lg border border-gray-200">
+          <summary class="flex justify-between items-center font-medium cursor-pointer list-none p-4">
+            <span> Masters - Graduation Marksheets </span>
+            <span class="transition group-open:rotate-180">
+              <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor"
+                stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24">
+                <path d="M6 9l6 6 6-6"></path>
+              </svg>
+            </span>
+          </summary>
+          <div class="text-gray-600 border-t border-gray-200 p-4">
+            <!-- Toggle -->
+            <div class="flex gap-4 mb-4">
+              <label class="inline-flex items-center">
+                <input type="radio" name="graduationSystem" value="semester" checked class="form-radio text-indigo-600"
+                  onchange="updateLabels('graduation')" />
+                <span class="ml-2">Semester System</span>
+              </label>
+              <label class="inline-flex items-center">
+                <input type="radio" name="graduationSystem" value="yearly" class="form-radio text-indigo-600"
+                  onchange="updateLabels('graduation')" />
+                <span class="ml-2">Yearly System</span>
+              </label>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <label id="label-GraduationPreFinal" class="form-label">Semesters 1-7 (Single PDF)</label>
+                <input type="file" id="file-GraduationPreFinal" accept=".pdf" class="file-input-base" />
+              </div>
+              <div>
+                <label id="label-GraduationFinal" class="form-label">Semester 8</label>
+                <input type="file" id="file-GraduationFinal" accept=".pdf" class="file-input-base" />
+              </div>
+            </div>
+          </div>
+        </details>
+
+        <!-- Post-Graduation -->
+        <details class="group bg-gray-50 rounded-lg border border-gray-200">
+          <summary class="flex justify-between items-center font-medium cursor-pointer list-none p-4">
+            <span> Masters - Post-Graduation Marksheets & Scores</span>
+            <span class="transition group-open:rotate-180">
+              <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor"
+                stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24">
+                <path d="M6 9l6 6 6-6"></path>
+              </svg>
+            </span>
+          </summary>
+          <div class="text-gray-600 border-t border-gray-200 p-4">
+            <!-- Toggle -->
+            <div class="flex gap-4 mb-4">
+              <label class="inline-flex items-center">
+                <input type="radio" name="pgSystem" value="semester" checked class="form-radio text-indigo-600"
+                  onchange="updateLabels('pg')" />
+                <span class="ml-2">Semester System</span>
+              </label>
+              <label class="inline-flex items-center">
+                <input type="radio" name="pgSystem" value="yearly" class="form-radio text-indigo-600"
+                  onchange="updateLabels('pg')" />
+                <span class="ml-2">Yearly System</span>
+              </label>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              <div>
+                <label id="label-PGPreFinal" class="form-label">Semesters 1-3 (Single PDF)</label>
+                <input type="file" id="file-PGPreFinal" accept=".pdf" class="file-input-base" />
+              </div>
+              <div>
+                <label id="label-PGFinal" class="form-label">Semester 4</label>
+                <input type="file" id="file-PGFinal" accept=".pdf" class="file-input-base" />
+              </div>
+              <div class="col-span-1 md:col-span-1">
+                <div class="col-span-1 md:col-span-1">
+                  <label class="form-label block mb-2">Exam Type</label>
+                  <div class="flex gap-4 mb-2">
+                    <label class="inline-flex items-center">
+                      <input type="radio" name="examType" value="GATEScoreCard" checked
+                        class="form-radio text-indigo-600" />
+                      <span class="ml-2">GATE</span>
+                    </label>
+                    <label class="inline-flex items-center">
+                      <input type="radio" name="examType" value="GPATScoreCard" class="form-radio text-indigo-600" />
+                      <span class="ml-2">GPAT</span>
+                    </label>
+                    <label class="inline-flex items-center">
+                      <input type="radio" name="examType" value="METScoreCard" class="form-radio text-indigo-600" />
+                      <span class="ml-2">MET</span>
+                    </label>
+                  </div>
+                  <label class="form-label">Score Card</label>
+                  <input type="file" id="file-ScoreCard" accept=".pdf" class="file-input-base" />
+                </div>
+              </div>
+            </div>
+        </details>
+      </section>
+
+      <!-- Actions -->
+      <div
+        class="flex flex-col sm:flex-row gap-4 pt-4 border-t sticky bottom-0 bg-white p-4 shadow-[0_-5px_15px_rgba(0,0,0,0.05)] z-10">
+        <button id="downloadZipBtn" class="btn-primary w-full flex justify-center items-center gap-2 text-lg">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+          </svg>
+          Rename & Download ZIP
+        </button>
+      </div>
+
+      <div id="statusMessage" class="hidden p-4 rounded-md mt-4"></div>
+    </div>
+
+    <footer class="mt-10 text-center text-sm text-gray-500 flex flex-col items-center gap-2 pb-8">
+      <p>&copy; 2025 All rights reserved.</p>
+      <div class="flex gap-4 items-center">
+        <a href="https://www.linkedin.com/in/shivansh-mishra-59281620b/" target="_blank" rel="noopener noreferrer"
+          class="flex items-center gap-1 text-blue-600 hover:text-blue-800 font-medium transition">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+            <path
+              d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+          </svg>
+          Shivansh Mishra
+        </a>
+        <span class="text-gray-300">|</span>
+        <a href="https://github.com/shivanshmishra123" target="_blank" rel="noopener noreferrer"
+          class="flex items-center gap-1 text-gray-700 hover:text-black font-medium transition">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+            <path
+              d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+          </svg>
+          GitHub
+        </a>
+      </div>
+    </footer>
+  </div>
+
+  <script type="module" src="./main.js"></script>
+</body>
+
 </html>

@@ -109,7 +109,6 @@ const fixedFileInputs = {
   CV02PagesFormat: { id: "file-CV02PagesFormat", pattern: "B" },
   JEEScoreCard: { id: "file-JEEScoreCard", pattern: "A" },
   "12thImprovement": { id: "file-12thImprovement", pattern: "A" },
-  GATEScoreCard: { id: "file-GATEScoreCard", pattern: "A" },
 };
 
 // Dynamic Inputs (Diploma, Grad, PG)
@@ -140,13 +139,12 @@ const getRenamedFilename = (docType, roll, name, course, branch, pattern) => {
 
 const showStatus = (message, type = "info") => {
   statusMessage.textContent = message;
-  statusMessage.className = `mt-4 p-4 rounded-md text-sm font-medium ${
-    type === "error"
-      ? "bg-red-50 text-red-700 border border-red-200"
-      : type === "success"
+  statusMessage.className = `mt-4 p-4 rounded-md text-sm font-medium ${type === "error"
+    ? "bg-red-50 text-red-700 border border-red-200"
+    : type === "success"
       ? "bg-green-50 text-green-700 border border-green-200"
       : "bg-blue-50 text-blue-700 border border-blue-200"
-  }`;
+    }`;
   statusMessage.classList.remove("hidden");
 };
 
@@ -231,6 +229,31 @@ downloadZipBtn.addEventListener("click", async () => {
         zip.file(newFilename, finalInput.files[0]);
         filesAdded++;
       }
+    }
+
+    // 3. Process Exam Score Card (Dynamic Type)
+    const scoreCardInput = document.getElementById("file-ScoreCard");
+    if (scoreCardInput && scoreCardInput.files.length > 0) {
+      // Get selected exam type
+      const examTypeRadios = document.getElementsByName("examType");
+      let selectedExamType = "GATEScoreCard"; // Default
+      for (const radio of examTypeRadios) {
+        if (radio.checked) {
+          selectedExamType = radio.value;
+          break;
+        }
+      }
+
+      const newFilename = getRenamedFilename(
+        selectedExamType, // Use GATE, GPAT, or MET as DocType
+        roll,
+        name,
+        course,
+        branch,
+        "A"
+      );
+      zip.file(newFilename, scoreCardInput.files[0]);
+      filesAdded++;
     }
 
     if (filesAdded === 0) {
