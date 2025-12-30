@@ -109,7 +109,7 @@ const fixedFileInputs = {
   CV02PagesFormat: { id: "file-CV02PagesFormat", pattern: "B" },
   JEEScoreCard: { id: "file-JEEScoreCard", pattern: "A" },
   "12thImprovement": { id: "file-12thImprovement", pattern: "A" },
-  GAMEScoreCard: { id: "file-GAMEScoreCard", pattern: "A" },
+  GATEScoreCard: { id: "file-GATEScoreCard", pattern: "A" },
 };
 
 // Dynamic Inputs (Diploma, Grad, PG)
